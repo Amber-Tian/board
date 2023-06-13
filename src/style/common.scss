@@ -1,0 +1,165 @@
+@import "variables";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background:$bgColor;
+}
+
+.input {
+    $placeholderColor: rgba(255, 255, 255, .3);
+
+    // placeholer的样式设置
+    .input::placeholder {
+        // WebKit, Blink, Edge浏览器，带input，双冒号
+        color: $placeholderColor;
+    }
+
+    input::-webkit-input-placeholder {
+        // WebKit, Blink, Edge浏览器，带input，双冒号
+        color: $placeholderColor;
+    }
+
+    input::-moz-placeholder {
+        // 火狐浏览器高版本（19+），不用带input，双冒号
+        color: $placeholderColor;
+    }
+
+    input:-moz-placeholder {
+        // 火狐浏览器底版本（4 to 18），不用带input，单冒号
+        color: $placeholderColor;
+    }
+
+    input:-ms-input-placeholder {
+        // IE浏览器底版本（10-11），带input，单冒号
+        color: $placeholderColor;
+    }
+}
+
+.allCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+// 其他浏览器滚动条设置-火狐和IE
+@mixin other {
+    scrollbar-color: $scrollSlider $scrollBgColor; //火狐--整个滚动条的背景色和滑块的颜色。
+    scrollbar-width: thin; //火狐---滚动条的宽度(注意：个属性只对窗口的滚动条有效果，对标签的滚动条无效。）
+    /*三角箭头的颜色*/
+    scrollbar-arrow-color: $borderColor;
+    /*滚动条滑块按钮的颜色*/
+    scrollbar-face-color: $scrollSlider; 
+    /*滚动条整体颜色*/
+    scrollbar-highlight-color: $scrollBgColor; 
+    /*滚动条阴影*/
+    scrollbar-shadow-color: $scrollBgColor;
+    /*滚动条轨道颜色*/
+    scrollbar-track-color: $scrollBgColor;
+    /*滚动条3d亮色阴影边框的外观颜色——左边和上边的阴影色*/
+    scrollbar-3dlight-color: $scrollBgColor;
+    /*滚动条3d暗色阴影边框的外观颜色——右边和下边的阴影色*/
+    scrollbar-darkshadow-color: $scrollBgColor;
+    /*滚动条基准颜色*/
+    scrollbar-base-color: $scrollBgColor; 
+}
+
+// 自定义滚动条
+// .myTable {
+* {
+    @include other; //其他浏览器滚动条设置-火狐和IE
+
+    // 滚动条两端的上/下（或左/右）按钮,
+    ::-webkit-scrollbar-button {}
+
+    // – 滚动条轨道未被滑块覆盖的部分
+    ::-webkit-scrollbar-track-piece {}
+
+    // 垂直滚动条和水平滚动条交汇的部分
+    ::-webkit-scrollbar-corner {
+        background-color: $bgColor;
+    }
+
+    // 右下角拖动块。个人习惯设置跟整体滚动条同一个背景色，不用刻意让它显示
+    ::-webkit-resizer {}
+
+    /*整个滚动条
+*定义滚动条高宽及背景----高宽分别对应横竖滚动条的尺寸
+*/
+    ::-webkit-scrollbar {
+        width: $scrollW; //定义的是纵向滚动条的宽度。不能控制横向滚动条的宽度
+        // height: 8px;  //定义的是横向滚动条的高度。同理不能控制横向滚动条的高度
+        background: $scrollBgColor !important;
+        border: 1px solid $borderColor !important;
+    }
+
+    /*滚动条的滚动区域（轨道）
+  *定义滚动条轨道----内阴影+圆角
+  */
+    ::-webkit-scrollbar-track {
+        border: 1px solid $borderColor !important; //边框设置
+        // -webkit-box-shadow: inset 0 0 6px $borderColor !important; //阴影颜色
+        border-radius: 0px;
+        background-color: $scrollBgColor !important; //整条滚动条的背景颜色
+        
+    }
+
+    /*滚动条的可拖拽部分（滑块）
+  *定义滑块-----内阴影+圆角
+  */
+    ::-webkit-scrollbar-thumb {
+        border-radius: 0px !important;
+        border: 1px solid $borderColor;
+        // -webkit-box-shadow:  0 0 0px 1px $borderColor !important;  //滑块边框阴影
+        background-color: $scrollSlider !important; //可移动滑块滚动条的背景颜色
+ 
+    }
+  
+}
+.stage {
+    $oneW: 20%;
+    display: flex;
+    width: 99vw;
+    height: $stageH;
+    line-height: $stageH;
+    text-align: center;
+    justify-content: start;
+    align-items: center;
+    margin: 2vh 0 1vh 0;
+    min-width: $containerMinW;
+    .stage_one,
+    .stage_two,
+    .stage_three {
+      border: 1px solid $borderColor;
+      background-color: rgb(32,55,100) ;
+    }
+
+    .stage_one {
+      width: $oneW;
+    }
+
+    .stage_two {
+      width: calc(100% - #{$oneW} - #{$oneW});
+    }
+
+    .stage_three {
+      width: $oneW;
+    }
+  }

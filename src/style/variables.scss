@@ -1,0 +1,63 @@
+$bgColor:rgb(12,22,52);  //整个页面背景颜色
+$arrowColor:#0a355a;  //箭头颜色
+$borderColor:rgb(0,176,240);   //边框颜色
+$scrollBgColor:rgb(31,77,119);  //整条滚动条的背景颜色
+$scrollSlider:rgb(13, 35, 55);  //滑块滚动条的背景颜色
+$trHoverColor: rgb(47, 117, 181); //表格行悬浮背景色
+$highlightCurrentRow: rgb(29, 29, 133); //表格选中行高亮
+
+
+$arrowW:1rem;  //箭头的宽度和高度
+$arrowBorder:($arrowW/2); //箭头与箭头之间的间隔
+$headH:4vh;  //头部高度
+$imgH:8vh;  //头部图片的高度
+$imgW: 3rem;  //头部图片的宽度
+$imgMinW: 90px; //头部图片的最小宽度
+$imgRight:1.5rem;  //头部每个图片的右边距
+$arrowPadding:$imgW * 1;  //箭头边距 
+$btnTitleH:1;  //箭头上方的标题高度 
+$htbglineHeight:2.5rem;  //合同工程变更分布页面中输入框和下拉框的高度 
+$scrollW:15px;  //滚动条宽度
+$htbgRW:2;  //合同工程变更分布详细页右边表格的宽度，当出现滚动条时错位问题
+$iconH:3vh;  //首页图标高度
+$stageH: 3vh;  //阶段性高度
+$stageD: 1rem;  //阶段性与其他元素的距离
+$commonBottom: 1vh; 
+$containerD:.5vw;  //整个body的边距
+$containerMinW: $imgMinW*16; //最小宽度
+
+//以下就旧项目
+$blue: #324157; //旧版本
+$light-blue: #3A71A8; //旧版本
+$red: #C03639; //旧版本
+$pink: #E65D6E; //旧版本
+$green: #30B08F; //旧版本
+$tiffany: #4AB7BD; //旧版本
+$yellow: #FEC171; //旧版本
+$panGreen: #30B08F; //旧版本
+
+// sidebar
+$menuText: #bfcbd9; //旧版本
+$menuActiveText: #409EFF;  //旧版本
+$subMenuActiveText: #f4f4f5; // //旧版本 https://github.com/ElemeFE/element/issues/12951
+
+$menuBg: #304156; //旧版本
+$menuHover: #263445; //旧版本
+
+$subMenuBg: #1f2d3d; //旧版本
+$subMenuHover: #001528; //旧版本
+
+$sideBarWidth: 210px; //旧版本
+ 
+// 这个用于.vue页面上
+:export {
+  scrollW:$scrollW;  //滚动条宽度
+  menuText: $menuText;  //旧版本
+  menuActiveText: $menuActiveText; //旧版本
+  subMenuActiveText: $subMenuActiveText; //旧版本
+  menuBg: $menuBg; //旧版本
+  menuHover: $menuHover; //旧版本
+  subMenuBg: $subMenuBg; //旧版本
+  subMenuHover: $subMenuHover; //旧版本
+  sideBarWidth: $sideBarWidth; //旧版本
+}

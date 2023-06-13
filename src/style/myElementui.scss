@@ -1,0 +1,53 @@
+@import "variables";
+
+.searchInput {
+    input {
+        background-color: $bgColor !important;
+        border-color: $arrowColor;
+        border-radius: 0;
+        border-width: 3px;
+        color:#fff;
+
+    }
+
+    .el-input-group__append {
+        background-color: transparent;
+        border-color: $arrowColor;
+
+        .el-icon-search {
+            font-size: 1.5rem;
+            color: $arrowColor;
+            font-weight: 800;
+        }
+    }
+
+    input:hover,
+    .el-input-group__append:hover {
+        border-color: #3A71A8;
+        box-shadow: 0px 0px 5px 0px #3A71A8;
+    }
+    
+}
+.detailInput{
+    input {
+        border-color: $borderColor;
+        border-width:1px;
+        height: $htbglineHeight !important;
+    }  
+}
+.bgSelectPopver{
+    .el-select-dropdown__list{
+        padding: 0px;
+    }
+}
+.bgSelectPopver {
+    .el-select-dropdown__item{
+        background-color: $borderColor !important;
+        color: #fff;
+        border-bottom:1px solid #fff;
+        &:hover{
+            background-color: rgb(19, 235, 239) !important;
+            color: $borderColor;
+        }
+    }
+}
