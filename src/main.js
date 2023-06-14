@@ -9,10 +9,8 @@ import axios from 'axios'
 import '@/style/common.scss'
 import '@/style/myElementui.scss'
 import './router' // permission control 
-import scroll from 'vue-seamless-scroll'  
 Vue.prototype.$axios = axios 
  
-Vue.use(scroll)
 Vue.use(ElementUI); 
 Vue.config.productionTip = false
 
